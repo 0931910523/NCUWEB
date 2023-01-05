@@ -17,6 +17,8 @@ class User(AbstractUser):
     bio = models.TextField(max_length=300, null=True)
 
     avatar = models.ImageField(null=True, default="avatar.svg")
+    
+    privacy = models.NullBooleanField(null=True)
 
     CL_Subject = 0
     EL_Subject = 1
