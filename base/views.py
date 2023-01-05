@@ -89,7 +89,7 @@ def home(request):
     
     return render(request, 'base/home.html', context)
 
-def likedRooms(request):
+def CheckedLikedRoom(request):
     user = request.user
     liked_rooms = Room.objects.filter(likes=user)
     room_count = liked_rooms.count()
@@ -251,7 +251,7 @@ def deleteMessage(request, pk):
 
 
 @login_required(login_url='login')
-def updateUser(request):
+def PrivacySetting(request):
     user = request.user
     form = UserForm(instance=user)
 
